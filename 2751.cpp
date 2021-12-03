@@ -16,7 +16,7 @@ int main()
     {
         int j=i-1;
         int key = list[i];
-        while(j>=0&&list[j]>key){
+        while(j>=0&&list[j]<key){
             list[j+1]=list[j];
             j--;
         }
