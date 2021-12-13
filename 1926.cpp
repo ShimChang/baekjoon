@@ -19,23 +19,22 @@ int main(void)
         }
     }
     queue<pair<int, int> > Q;
-    vis[0][0] = 1;
-    Q.push(pair<int, int>(0, 0)); // 큐에 시작점인 (0, 0)을 삽입.
     int size = 0;
     int maxsize = 0;
     for (int i = 0; i < n; i++)
     {
-        for (int j = 1; j < n; j++)
+        for (int j = 0; j < m; j++)
         {
-            if (vis[i][j] == 1 && board[i][j] == 0)
+            if (vis[i][j] || board[i][j] == 0)
                 continue;
             size++;
-            pair<int, int> cur = Q.front();
-            vis[i][j]=1;
+            vis[i][j] = 1;
+            Q.push(pair<int, int>(i, j));
             int area = 0;
             while (!Q.empty())
             {
                 area++;
+                pair<int, int> cur = Q.front();
                 Q.pop();
 
                 for (int dir = 0; dir < 4; dir++)
@@ -51,6 +50,7 @@ int main(void)
                 }
             }
             if (area > maxsize)
+
                 maxsize = area;
         }
     }
