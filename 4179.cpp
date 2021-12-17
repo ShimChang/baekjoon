@@ -12,8 +12,8 @@ int dy[4] = {0, 1, 0, -1};
 
 int main()
 {
-    ios::sync_with_stdio(0);
-    cin.tie(0);
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
     int r, c;
     cin >> r >> c;
     queue<pair<int, int> > Q;
