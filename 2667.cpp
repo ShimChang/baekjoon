@@ -5,7 +5,7 @@
 #include<algorithm>
 using namespace std;
 
-int board[26][26];
+string board[26];
 bool vis[26][26];
 int dx[4] = {1, 0, -1, 0};
 int dy[4] = {0, 1, 0, -1};
@@ -16,9 +16,7 @@ int main(){
     int n;
     cin>>n;
     for(int i=0;i<n;i++){
-        for(int j=0;j<n;j++){
-            cin>>board[i][j];
-        }
+        cin>>board[i];
     }
     queue<pair<int,int> > q;
     vector<int> v;
@@ -27,7 +25,7 @@ int main(){
 
     for(int i=0;i<n;i++){
         for(int j=0;j<n;j++){
-            if(vis[i][j]||board[i][j]==0) continue;
+            if(vis[i][j]||board[i][j]=='0') continue;
             area++;
             vis[i][j] = 1;
             q.push(pair<int, int>(i, j));
@@ -39,7 +37,7 @@ int main(){
                     int nx=cur.first+dx[dir];
                     int ny=cur.second+dy[dir];
                     if(nx<0||ny<0||nx>=n||ny>=n) continue;
-                    if(board[nx][ny]==0||vis[nx][ny]) continue;
+                    if(board[nx][ny]=='0'||vis[nx][ny]) continue;
                     vis[nx][ny]=1;
                     q.push(pair<int,int>(nx,ny));
                 }
