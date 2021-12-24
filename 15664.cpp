@@ -17,7 +17,7 @@ void func(int k){ // 현재 k개까지 수를 택했음.
 
     int xx=-1;
   for(int i = 0; i < n; i++){ // 1부터 n까지의 수에 대해
-    if(!isused[i]&&xx!=arr2[i]){ // 아직 i가 사용되지 않았으면
+    if(!isused[i]&&xx!=arr2[i]&&arr[k-1]<=arr2[i]){ // 아직 i가 사용되지 않았으면
       xx=arr2[i];
       arr[k] = arr2[i]; // k번째 수를 i로 정함
       isused[i] = 1; // i를 사용되었다고 표시
