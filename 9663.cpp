@@ -2,9 +2,9 @@
 using namespace std;
 
 int n;
-bool used[200];
-bool used2[200];
-bool used3[200];
+bool used[35];
+bool used2[35];
+bool used3[35];
 int ans=0;
 
 void fuc(int num){
