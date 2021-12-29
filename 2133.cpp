@@ -8,9 +8,10 @@ int main(){
     cin>>n;
     d[0]=1;
     d[2]=3;
-    d[4]=5;
     for(int i=4;i<=n;i++){
-        d[i]=d[i-2]+d[i-4];
+        for(int j=1;j<=n;j++){
+            d[i]=3*d[i-2]+2*d[i]
+        }
     }
     cout<<d[n];
 }
