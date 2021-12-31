@@ -9,15 +9,11 @@ int main(){
     cin>>str2;
     d[0]=0;
     int len;
+    if(str.length()>str2.length()) len=str.length();
+    else len=str2.length();
 
-
-    for(int i=1;i<str.length();i++){
-        for(int j=0;j<str2.length();j++){
-            if(str[i]==str[j]&&d[i]<d[i-1]+1){
-                d[i]=d[i-1]+1;
-            
-            }
-        }
+    for(int i=0;i<len;i++){
+        
     }
     cout<<d[str.length()]<<" "<<d[str2.length()];
     
