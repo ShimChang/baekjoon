@@ -2,8 +2,8 @@
 #include<queue>
 #include<utility>
 using namespace std;
-int is[51][51];
-bool bo[51][51];
+int is[52][52];
+bool bo[52][52];
 int dx[8]={0,0,1,-1,1,-1,1,-1};
 int dy[8]={1,-1,0,0,-1,1,1,-1};
 
@@ -13,7 +13,7 @@ int main(){
     while(true){
         int w,h;
         cin>>w>>h;
-        if(w==0&&h==0) break;
+        if(w==0&&h==0) return 0;
         int num=0;
         for(int i=0;i<h;i++){
             for(int j=0;j<w;j++){
@@ -25,6 +25,7 @@ int main(){
             for(int j=0;j<w;j++){
                 if(bo[i][j]||is[i][j]==0) continue;
                 q.push(pair<int,int>(i,j));
+                bo[i][j]=true;
                 num++;
                 while(!q.empty()){
                     pair<int,int> cur=q.front();
@@ -40,10 +41,10 @@ int main(){
                 }
             }
         }
-        for(int i=0;i<50;i++){
-            fill(is[i],is[i]+50,0);
-            fill(bo[i],bo[i]+50,false);
+        for(int i=0;i<52;i++){
+            fill(is[i],is[i]+51,0);
+            fill(bo[i],bo[i]+51,false);
         }
-        cout<<num;
+        cout<<num<<'\n';
     }
 }
